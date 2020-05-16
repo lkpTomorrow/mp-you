@@ -1,0 +1,21 @@
+@import './../../../assets/styles/bem.scss';
+
+@include b(default-layout){
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  @include e(header){
+
+  }
+
+  @include e(content){
+    flex:1;
+    height: 400px;
+  }
+
+  @include e(footer){
+
+  }
+}

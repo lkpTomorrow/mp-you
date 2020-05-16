@@ -5,13 +5,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { DefaultLayoutComponent } from './default-layout/default-layout.component';
+import { DefaultFooterComponent } from './default-footer/default-footer.component';
+import { DefaultHeaderComponent } from './default-header/default-header.component';
+import { FooterInfoComponent } from './footer-info/footer-info.component';
 
 const SHARE_COMPONENT=[
   DefaultLayoutComponent
 ]
 @NgModule({
   declarations: [
-    ...SHARE_COMPONENT
+    ...SHARE_COMPONENT,
+    DefaultFooterComponent,
+    DefaultHeaderComponent,
+    FooterInfoComponent
   ],
   imports: [
     CommonModule,

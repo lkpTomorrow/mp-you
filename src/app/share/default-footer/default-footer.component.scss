@@ -1,0 +1,17 @@
+@import '../../../assets/styles/bem.scss';
+
+
+@include b(default-footer){
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #3EB08A;
+  height: 40px;
+  @include e(copy){
+  color:#fff;
+  font-size: 12px;
+  
+}
+}

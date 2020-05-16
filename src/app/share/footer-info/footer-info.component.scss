@@ -1,0 +1,59 @@
+@import "../../../assets/styles/bem.scss";
+
+@include b(footer-info) {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 40px 240px 0;
+  margin: auto;
+  height: 234px;
+
+  @include e(wrapper){
+    background: #F5F7F7;
+  }
+  @include e(concat) {
+    flex: 1;
+  }
+
+  @include e(qrcode) {
+    width: 160px;
+    height: 160px;
+    background: #666;
+    & > img {
+     width: 100%;
+     height: 100%;
+    }
+  }
+
+
+  @include e(title){
+    font-size: 16px;
+    color:#3EB08A; //TODO 为什么不能使用primary-color
+    text-align: justify;
+    padding: 0 10px 20px;
+
+  }
+
+  @include e(list){
+    @include e(item){
+      font-size: 14px;
+      letter-spacing: 1.84px;
+      text-align: justify;
+      
+    }
+  }
+
+  @include e(link){
+    color:#666;
+    padding: 0 10px;
+    line-height: 24px;
+    display: inline-block;
+    @include m(disabled){
+      pointer-events: none;
+    }
+    &:hover{
+      color:#3EB08A;
+    }
+  }
+}
