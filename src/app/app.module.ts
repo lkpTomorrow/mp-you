@@ -11,6 +11,7 @@ import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {CoreModule} from './core/core.module';
+import {ShareModule} from './share/share.module';
 registerLocaleData(zh);
 
 @NgModule({
@@ -18,12 +19,10 @@ registerLocaleData(zh);
     AppComponent
   ],
   imports: [
+    ShareModule,
     BrowserModule,
-  FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    /** 导入 ng-zorro-antd 模块 **/
-    NgZorroAntdModule,
+    AppRoutingModule,
     CoreModule
   ],
   providers   : [

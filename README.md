@@ -1,3 +1,14 @@
+core:主要是一些服务，谁要用的话，就引入core
+share：主要是一些公共的组件
+
+
+
+
+
+
+
+
+
 # MarketPlace
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
