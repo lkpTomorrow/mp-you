@@ -1,0 +1,43 @@
+@import '../../../assets/styles/bem.scss';
+
+
+
+@include b(default-header){
+
+  padding: 0px 120px;
+  height: 84px;
+  margin:0 auto;
+  display: flex;
+  // flex-direction: row;
+
+@include e(wrapper){
+  width: 100%;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.14)
+}
+
+  @include e(left){
+    display: flex;
+    align-items: center;
+  }
+
+
+  @include e(right){
+    
+  }
+}
+
+.logo{
+  margin-bottom: 0;
+  margin-right: 16px;
+  font-size: inherit;
+  &>a{
+    font-size: inherit;
+    img{
+      width: 60px;
+    }
+  }
+}
+
+.publish-btn{
+  margin-left: 16px;
+}

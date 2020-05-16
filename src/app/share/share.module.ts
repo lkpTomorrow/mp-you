@@ -8,6 +8,7 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
 import { DefaultFooterComponent } from './default-footer/default-footer.component';
 import { DefaultHeaderComponent } from './default-header/default-header.component';
 import { FooterInfoComponent } from './footer-info/footer-info.component';
+import { NavComponent } from './nav/nav.component';
 
 const SHARE_COMPONENT=[
   DefaultLayoutComponent
@@ -17,7 +18,8 @@ const SHARE_COMPONENT=[
     ...SHARE_COMPONENT,
     DefaultFooterComponent,
     DefaultHeaderComponent,
-    FooterInfoComponent
+    FooterInfoComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,
