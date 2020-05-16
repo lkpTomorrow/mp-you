@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {CoreModule} from './core/core.module';
 registerLocaleData(zh);
 
 @NgModule({
@@ -22,7 +23,8 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     /** 导入 ng-zorro-antd 模块 **/
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    CoreModule
   ],
   providers   : [
     { provide: NZ_I18N, useValue: zh_CN }
