@@ -1,0 +1,98 @@
+@import "../../../assets/styles/bem.scss";
+
+@include b(product-list-item) {
+  height: 100%;
+  border-top: 4px solid #50e3c1;
+  background: #fff;
+  padding: 16px 20px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 24px rgba(109, 104, 104, 0.14);
+    h3 {
+      color: #3eb08a;
+    }
+  }
+  @include e(top) {
+    display: flex;
+  }
+  @include e(thumb) {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    flex:0 0 60px;
+
+    & > img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @include e(title) {
+    flex: 0 1 110px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // TODO 必须加上这个，h3才可以... 显示。
+
+    &>h3{ // 标题的
+      font-size: 16px;
+      color:#333;
+      padding: 4px 0 10px;
+
+    }
+    &>span{ // 暂无评价的
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+
+
+  @include e(desc){
+
+    font-size: 14px;
+    line-height: 20px;
+    color:#999;
+    word-break: break-all;
+    
+
+    @include e(wrapper){
+      flex: 1;
+    }
+
+   
+  }
+
+
+  @include e(more){
+    font-size: 14px;
+    color: #3eb08a;
+    display: flex;
+    justify-content: flex-end; // TODO 为了跟箭头居中对齐
+    align-items: center;
+  }
+
+  @include e(price){
+    position: absolute;
+    top:16px;
+    right:20px;
+    min-width:54px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 16px;
+
+    background: #3eb08a ;
+    color:#fff;
+    border-radius: 3px;
+    display: block;
+    text-align: center;
+    cursor: default;
+  }
+}

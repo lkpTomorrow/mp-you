@@ -9,17 +9,31 @@ import { DefaultFooterComponent } from './default-footer/default-footer.componen
 import { DefaultHeaderComponent } from './default-header/default-header.component';
 import { FooterInfoComponent } from './footer-info/footer-info.component';
 import { NavComponent } from './nav/nav.component';
+import { PricePipe } from './price.pipe';
+import { MultilineEllipsisDirective } from './multiline-ellipsis.directive';
 
 const SHARE_COMPONENT=[
   DefaultLayoutComponent
+];
+
+const SHARE_PIPE=[
+  PricePipe
+];
+
+const SHARE_DIRECTIVE=[
+  MultilineEllipsisDirective
 ]
 @NgModule({
   declarations: [
     ...SHARE_COMPONENT,
+    ...SHARE_PIPE,
+    ...SHARE_DIRECTIVE,
     DefaultFooterComponent,
     DefaultHeaderComponent,
     FooterInfoComponent,
-    NavComponent
+    NavComponent,
+    
+    
   ],
   imports: [
     CommonModule,
@@ -36,7 +50,9 @@ const SHARE_COMPONENT=[
     RouterModule,
     HttpClientModule,
     NgZorroAntdModule,
-    ...SHARE_COMPONENT
+    ...SHARE_COMPONENT,
+    ...SHARE_PIPE,
+    ...SHARE_DIRECTIVE,
   ]
 })
 export class ShareModule { }

@@ -1,3 +1,22 @@
-<p>
-  home works!
-</p>
+<div class="product-list-wrapper">
+  <ul class="titles">
+    <li
+      [class.active]="productListActived === 'hot'"
+      (click)="handleProductListChange('hot')"
+    >
+      热门产品
+    </li>
+
+    <li
+      [class.active]="productListActived === 'new'"
+      (click)="handleProductListChange('new')"
+    >
+      最新产品
+    </li>
+  </ul>
+
+  <div>
+    <mp-product-list
+    [list]="productList$ | async"></mp-product-list>
+  </div>
+</div>

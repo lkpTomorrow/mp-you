@@ -2,13 +2,42 @@
 
 @import "./assets/styles/reset.scss";
 
-html,body,.sites{
+html,
+body,
+.sites {
   width: 100%;
   height: 100%;
 }
 
-
-
-:focus{
+:focus {
   outline: none;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+// TODO 模拟... 的样式
+.multiline-ellipsis{
+  line-height: 20px;
+  max-height: 80px;
+  overflow: hidden;
+
+  position: relative;
+  &::after{
+    content:'...';
+    position: absolute;
+    bottom:0;
+    right:0;
+    background: #FFF;
+  }
 }

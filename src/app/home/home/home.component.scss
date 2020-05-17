@@ -1,0 +1,26 @@
+.product-list-wrapper {
+  min-height: 418px;
+  padding: 0 120px;
+  background: #f5f5f7;
+
+  .titles{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    &>li{
+      font-size: 24px;
+      color:#000;
+      opacity: 0.4;
+      margin:0 40px;
+      cursor: pointer;
+
+      user-select: none;
+
+      &.active,
+      &:hover{
+        color: #3EB08A;
+        opacity: 0.8;
+      }
+    }
+  }
+}

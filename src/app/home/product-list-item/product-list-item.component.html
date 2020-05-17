@@ -1,0 +1,35 @@
+<div class="mp-product-list-item">
+  <div class="mp-product-list-item__top">
+    <div class="mp-product-list-item__thumb">
+      <img [src]="data.thumb" alt="" />
+    </div>
+    <div class="mp-product-list-item__title">
+      <h3 class="text-ellipsis">{{ data.title }}</h3>
+      <span *ngIf="!data.star">暂无评价</span>
+      <nz-rate
+        *ngIf="data.star"
+        [(ngModel)]="data.star"
+        [nzDisabled]="true"
+      ></nz-rate>
+    </div>
+  </div>
+
+
+  <div class="mp-product-list-item__desc__wrapper">
+    <!-- multiline-ellipsis -->
+    <div class="mp-product-list-item__desc "
+    mpMultilineEllipsis maxHeight='60'>
+      {{ data.desc }}
+    </div>
+  </div>
+
+  <a class="mp-product-list-item__more" [routerLink]="data.link">
+    了解更多
+    <!-- <i class="iconfont icon-jiantou"></i> -->
+    <i nz-icon nzType="right" nzTheme="outline"></i>
+  </a>
+
+  <span class="mp-product-list-item__price">
+    {{ data.price | price }}
+  </span>
+</div>

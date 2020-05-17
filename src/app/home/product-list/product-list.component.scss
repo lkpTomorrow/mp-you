@@ -1,0 +1,20 @@
+@import '../../../assets/styles/bem.scss';
+
+
+@include b(product-list){
+  display: flex;
+  flex-wrap: wrap;
+
+
+  @include e(item){
+    // TODO
+    width: 31.33%;
+    height: 218px;
+    margin:0 1%;
+    // margin: 0 15px; // 没有居中其实
+    margin-bottom: 30px;
+
+    background: #FFF;
+    box-sizing: border-box;
+  }
+}

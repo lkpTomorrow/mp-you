@@ -14,7 +14,7 @@ export class DefaultLayoutComponent implements OnInit {
 
   public navList: any = [];
   ngOnInit() {
-    let url = "http://localhost:3000/nav";
+    let url = "http://localhost:3000/category";
     this.http
       .get(url)
       .pipe(
