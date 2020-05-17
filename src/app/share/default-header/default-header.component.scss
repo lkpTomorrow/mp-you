@@ -22,7 +22,10 @@
 
 
   @include e(right){
-    
+    flex:1; // TODO 右对齐，且垂直居中
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
@@ -33,7 +36,8 @@
   &>a{
     font-size: inherit;
     img{
-      width: 60px;
+      width: 137px;
+      height: 15px;
     }
   }
 }

@@ -30,7 +30,7 @@
   @include e(title){
     font-size: 16px;
     color:#3EB08A; //TODO 为什么不能使用primary-color
-    text-align: justify;
+    text-align: justify; // justify什么概念？
     padding: 0 10px 20px;
 
   }
@@ -49,6 +49,7 @@
     padding: 0 10px;
     line-height: 24px;
     display: inline-block;
+    
     @include m(disabled){
       pointer-events: none;
     }

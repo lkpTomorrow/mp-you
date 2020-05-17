@@ -1,25 +1,21 @@
-
+<!-- default-header -->
 <div class="mp-default-header__wrapper">
   <div class="mp-default-header">
+    <div class="mp-default-header__left">
+      <h1 class="logo">
+        <a href="/">
+          <img src="http://placehold.it/400x200/" />
+        </a>
+      </h1>
 
-  <div class="mp-default-header__left">
+     <mp-nav [list]='navList'></mp-nav>
 
-    <h1 class='logo'>
-      <a href="/">
-        <img src="http://placehold.it/400x200/">
-      </a>
-    </h1>
 
-    
+      <button nz-button nzSize="large" class="publish-btn">发布产品</button>
+    </div>
 
-    <button nz-button nzSize='large' class='publish-btn'>发布产品</button>
-    
+    <div class="mp-default-header__right">
+      you
+    </div>
   </div>
-
-
-  <div class="mp-default-header__right">
-    you
-  </div>
-</div>
-
 </div>
