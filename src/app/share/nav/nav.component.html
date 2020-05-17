@@ -1,19 +1,27 @@
 <div class="mp-nav">
   <ul class="mp-nav__list">
+
+    <!-- 首页 -->
     <li class="mp-nav__list__item">
-      <a class='mp-nav__link'>首页</a>
+      <a class='mp-nav__link'
+      routerLink='/pages/home'
+      routerLinkActive="active">首页</a>
     </li>
 
    
 
 
-      <nz-dropdown>
+      <nz-dropdown [nzTrigger]="'click'">
           <li class="mp-nav__list__item" nz-dropdown>
-              <a class='mp-nav__link'>产品中心</a>
+              <a class='mp-nav__link'
+              [ngClass]="{'active':currentUrl.includes('/pages/product')}">产品中心</a>
             </li>
           <ul nz-menu nzSelectable>
-            <li nz-menu-item *ngFor="let item of list">
+            <li nz-menu-item *ngFor="let item of list"
+            [routerLink]='item.link'
+            routerLinkActive="ant-dropdown-menu-item-selected nt-dropdown-menu-item-selected">
               <a>{{item.title}}</a>
+
             </li>
           </ul>
         </nz-dropdown>

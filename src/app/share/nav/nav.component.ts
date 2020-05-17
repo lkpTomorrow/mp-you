@@ -1,4 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
+import {filter} from 'rxjs/operators'
+import { Navigation } from 'selenium-webdriver';
 
 @Component({
   selector: 'mp-nav',
@@ -8,19 +12,30 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
-
-  @Input() list:any;
-  ngOnInit() {
-    console.log('nav-ngOnInit',this.list);
-    setTimeout(()=>{
-      console.log('nav-ngOnInit-timeout',this.list);
-    },1000)
+  constructor(private router:Router) { 
+    // tab的选中状态
+    this.currentUrl = this.router.routerState.snapshot.url;
   }
 
-  ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    console.log('nav-ngAfterViewInit',this.list);
+  @Input() list:any;
+
+  public currentUrl:string; // 当前url
+  public subscription:Subscription;
+  ngOnInit() {
+
+    // TODO 路由事件
+    this.subscription= this.router.events
+    .pipe(filter((event:RouterEvent)=>event instanceof NavigationEnd))
+    .subscribe((event:RouterEvent)=>{
+      this.currentUrl = event.url;
+    })
+  }
+
+  // 取消订阅（有订阅就必须取消！！！！）
+  ngOnDestroy(): void {
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
+    
   }
 }

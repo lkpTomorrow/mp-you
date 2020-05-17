@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { ShareModule } from '../share/share.module';
 
+
+const SHARE_COMPONENTS=[
+  HomeComponent
+]
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...SHARE_COMPONENTS
+  ],
   imports: [
-    CommonModule
+    ShareModule
+  ],
+  exports:[
+    ...SHARE_COMPONENTS
   ]
 })
 export class HomeModule { }
